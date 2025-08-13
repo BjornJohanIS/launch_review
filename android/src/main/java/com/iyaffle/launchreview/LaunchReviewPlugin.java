@@ -97,8 +97,8 @@ public class LaunchReviewPlugin implements FlutterPlugin, ActivityAware, MethodC
                             Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     rateIntent.setComponent(componentName);
 
-                    if (showToast) {
-                        Toast.makeText(activity, toastMessage, Toast.LENGTH_SHORT).show();
+                    if (showToast && activity != null) {
+                        android.widget.Toast.makeText(activity, toastMessage, android.widget.Toast.LENGTH_SHORT).show();
                     }
 
                     activity.startActivity(rateIntent);
